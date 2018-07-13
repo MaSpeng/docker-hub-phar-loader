@@ -12,7 +12,6 @@ To use the `PHAR-Loader` you can do the following.
 ```bash
 $ docker run \
     --rm \
-    --interactive \
     --tty \
     --workdir /app \
     --volume "$(pwd)":/app \
@@ -24,11 +23,10 @@ You can use any of the PHAR-loader commands
 ```bash
 $ docker run \
     --rm \
-    --interactive \
     --tty \
     --workdir /app \
     --volume "$(pwd)":/app \
-    maspeng/phar-loader --help
+    maspeng/phar-loader
 ```
 
 You can mount the PHAR-Loader home directory from your host inside the Container to share caching and configuration files:
@@ -36,7 +34,6 @@ You can mount the PHAR-Loader home directory from your host inside the Container
 ```bash
 $ docker run \
     --rm \
-    --interactive \
     --tty \
     --workdir /app \
     --volume ~/.phar-loader:/root/.phar-loader \
@@ -51,7 +48,6 @@ To override the home directory of the PHAR-Loader you might set the `PHAR_LOADER
 ```bash
 $ docker run \
     --rm \
-    --interactive \
     --tty \
     --env PHAR_LOADER_HOME=/tmp/.phar-loader \
     --workdir /app \
